@@ -1,0 +1,13 @@
+BRG001,     Tas, 35
+BRG002,     Tempat pensil, 50
+BRG003,     Buku tulis, 40
+BRG004,     Binder, 30
+BRG005,     Pensil, 40
+BRG006,     Pensil warna, 20
+BRG007,     Buku gambar, 50
+BRG008,     Sampul plastik, 25
+BRG009,     Pulpen, 55
+BRG010,     Lem kertas, 20
+BRG011,    Penghapus, 100
+BRG012,   Penggaris, 50
+BRG013, Gunting, 10
