@@ -1,6 +1,21 @@
+#====================================================
+#TUGAS HANDS-ON MODUL 1
+#studi kasus: Sistem Stok Barang Kantin
+#
+#Nama: Shofia Aziza Iman
+#NIM: J0403251050
+#Kelas: B1
+#====================================================
+
+#-----------------------------------------
+# Konstanta nama file
+#-----------------------------------------
 nama_file = "pertemuan 2/stok_barang.txt"
 
-#fungsi membaca data
+
+#-----------------------------------------
+#Fungsi: membaca data dari file
+#-----------------------------------------
 def baca_stok_barang(nama_file):
     stok_dict = {}
     with open("pertemuan 2/stok_barang.txt", "r", encoding="utf-8") as file:
@@ -17,7 +32,10 @@ def baca_stok_barang(nama_file):
 #memanggil fungsi baca_stok_barang
 buka_stok = baca_stok_barang(nama_file)
 
+
+#--------------------------------------------
 #fungsi menu ke 1 (tampilkan stok) pake tabel
+#--------------------------------------------
 def tampilkan_stok(stok_dict):
     if len(stok_dict) == 0:
         print("Data Kosong")
@@ -31,7 +49,9 @@ def tampilkan_stok(stok_dict):
         stok=stok_dict[kode]["stok"]
         print(f"{kode : <10} | {barang: <12} | {stok: >5}")
 
+#------------------------------------------------
 #fungsi  menu 2 (mencari barang berdasarkan kode)
+#------------------------------------------------
 def cari_barang(stok_dict):
     kode_cari = input("Masukkan kode barang yang ingin dicari: ").strip()
 
@@ -45,7 +65,9 @@ def cari_barang(stok_dict):
     else:
         print("\nBarang tidak ditemukan")
 
+#----------------------------------
 #fungsi menu 3 (tambah barang baru)
+#----------------------------------
 def tambah_barang(stok_dict, nama_file):
     print("\n===== Tambah Barang Baru =====")
     kode = input("Masukkan kode barang: ").strip()
@@ -77,7 +99,9 @@ def tambah_barang(stok_dict, nama_file):
         file.write(f"\n{kode},{nama},{stok}")
     print("Barang berhasil ditambahkan!")
 
+#----------------------------------
 #fungsi menu 4 (update stok barang)
+#----------------------------------
 def update_stok(stok_dict):
     kode = input("Masukkan kode barang yang akan diupdate stoknya: ").strip()
     if kode not in stok_dict:
@@ -120,7 +144,9 @@ def update_stok(stok_dict):
     stok_dict[kode]["stok"] = stok_baru
     print(f"Update berhasil. Stok barang dengan kode {kode} berubah dari {stok_lama} menjadi {stok_baru}.")
 
+#------------------------------------------
 #fungsi menu 5 (menyimpan perubahan ke file)
+#------------------------------------------
 def simpan_data(nama_file, stok_dict):
     with open(nama_file, "w", encoding="utf-8") as file:
         for kode in sorted(stok_dict.keys()):
@@ -128,7 +154,9 @@ def simpan_data(nama_file, stok_dict):
             stok = stok_dict [kode] ["stok"]
             file.write(f"{kode}, {barang}, {stok}\n")
 
+#------------------------
 #fungsi main (menu utama)
+#------------------------
 def main():
     buka_stok = baca_stok_barang(nama_file)
 
