@@ -6,17 +6,22 @@
 # Contoh Backtracking: Kombinasi Biner (n)
 #=============================================================
 
+# Fungsi rekursif untuk menghasilkan kombinasi biner sepanjang n
 def biner(n, hasil=""):
 
-    # Base case: jika panjang string sudah n, cetak hasil
+    # Base case: jika panjang string 'hasil' sudah sama dengan n
+    # artinya kombinasi sudah lengkap dan siap dicetak
     if len(hasil) == n:
-        print(hasil)
-        return
+        print(hasil)    # Cetak kombinasi biner
+        return          # Hentikan rekursi pada cabang ini
     
-    # Choose + Explore: tambah '0'
+    # Recursive case (Choose + Explore)
+    # Tambahkan karakter '0' ke string hasil
+    # lalu panggil kembali fungsi biner
     biner(n, hasil + "0")
 
-    # Choose + Explore: tambah '1'
+    # Tambahkan karakter '1' ke string hasil
+    # lalu panggil kembali fungsi biner
     biner(n, hasil + "1")
 
 print("=====Program Kombinasi Biner=====")
